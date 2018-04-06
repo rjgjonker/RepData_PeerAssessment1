@@ -104,6 +104,7 @@ Imputing values as implemented in this document leads to a larger fraction of va
 ## Are there differences in activity patterns between weekdays and weekends?
 
 ```{r, echo = TRUE}
+# Add the `daytype` data field to dfimp
 weekday <- weekdays(as.Date(dfimp$date))
 dfimp$daytype <- factor(ifelse(weekday == "Saturday" | weekday == "Sunday",
 							   "weekend", "weekday"))
